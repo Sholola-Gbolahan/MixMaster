@@ -4,8 +4,8 @@ import Wrapper from "../assets/wrappers/CocktailCard";
 const CocktailCard = ({id, image, name, info, glass}) => {
 
   // useOutletContext is used to give access to global values in all the cards
-  const data = useOutletContext();
-  console.log(data);
+  // const data = useOutletContext();
+  // console.log(data);
 
 
   return (

@@ -765,7 +765,7 @@ Cocktail.jsx
 
 ```js
 const singleCocktailUrl =
-  'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
+   
 import { useLoaderData, Link } from 'react-router-dom';
 import axios from 'axios';
 
