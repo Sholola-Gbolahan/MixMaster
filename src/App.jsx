@@ -6,6 +6,7 @@ import {
   HomeLayout,
   Landing,
   Newsletter,
+  SingleErrorPage
 } from "./pages";
 
 import { loader as landingLoader} from "./pages/Landing";
@@ -23,7 +24,8 @@ const router = createBrowserRouter([
         // Landing page in this case will be the defualt page to show at the root domain
         index: true,
         element: <Landing />,
-        loader: landingLoader
+        loader: landingLoader,
+        errorElement: <SingleErrorPage/>
       },
       {
         path: "newsletter",
