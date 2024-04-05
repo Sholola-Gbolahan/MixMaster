@@ -6,9 +6,11 @@ import Wrapper from "../assets/wrappers/ErrorPage";
 
 const Error = () => {
   const error = useRouteError();
-
+// located the error status from the useRouterError component
   console.log(error)
 
+
+  // This only display if the error status is 404.
   if (error.status === 404 ){
     return <Wrapper>
       <div>
