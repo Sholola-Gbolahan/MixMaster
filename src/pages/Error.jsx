@@ -20,11 +20,11 @@ const Error = () => {
          <Link to='/'>Back to home</Link>
       </div>
 
-    </Wrapper>
-    
+    </Wrapper> 
   }
+
   return (  
-    <h1>Error</h1>
+    <h1>Somthing went wrong....</h1>
   )
 }
 
