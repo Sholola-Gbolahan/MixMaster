@@ -14,27 +14,39 @@ const router = createBrowserRouter([
     element: <HomeLayout />,
     // Children is used to nest others pages to a parent page
     // All the children pages are gonna be relative to the Parent  pages
-    children:[
+    children: [
       {
         // The index makes the particular page shows up at the root domain
-        // Landing page in this case will be the defualt page to show at the root domain 
-       index:true,
+        // Landing page in this case will be the defualt page to show at the root domain
+        index: true,
         element: <Landing />,
       },
       {
         path: "newsletter",
-        element: <Newsletter/>,
+        element: <Newsletter />,
       },
       {
         path: "cocktail",
         element: <Cocktail />,
       },
+
+      //  You can next as deep
+      // In this case I nested more pages/ element in my about page
       {
         path: "about",
         element: <About />,
+        children: [
+          {
+            index: true,
+            element: <h2>Our Company</h2>,
+          },
+          {
+            path: "person",
+            element: <h2>Samson Sholola</h2>,
+          },
+        ],
       },
-
-    ]
+    ],
   },
 
   {
@@ -46,7 +58,6 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <div>
-    
       <RouterProvider router={router} />
     </div>
   );
