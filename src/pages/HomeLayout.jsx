@@ -5,9 +5,10 @@ const HomeLayout = () => {
   return (
     <div>
       <Navbar />
+      <section className="page">
       <Outlet />
-
-      <footer>Footer</footer>
+      </section>
+      
 
     </div>
   );
