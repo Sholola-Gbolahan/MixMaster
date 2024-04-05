@@ -10,6 +10,7 @@ const Wrapper = styled.article`
     box-shadow: var(--shadow-4);
   }
   img {
+    width:100%;
     height: 15rem;
     border-top-left-radius: var(--borderRadius);
     border-top-right-radius: var(--borderRadius);
