@@ -6,16 +6,18 @@ import {
   HomeLayout,
   Landing,
   Newsletter,
-  SingleErrorPage
+  SingleErrorPage,
 } from "./pages";
 
-import { loader as landingLoader} from "./pages/Landing";
+import { loader as landingLoader } from "./pages/Landing";
+// Importing Cocktial Loader into App
+import { loader as singleCocktailLoader } from "./pages/Cocktail";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
-    errorElement: <Error/>,
+    errorElement: <Error />,
     // Children is used to nest others pages to a parent page
     // All the children pages are gonna be relative to the Parent  pages
     children: [
@@ -25,7 +27,7 @@ const router = createBrowserRouter([
         index: true,
         element: <Landing />,
         loader: landingLoader,
-        errorElement: <SingleErrorPage/>
+        errorElement: <SingleErrorPage />,
       },
       {
         path: "newsletter",
@@ -34,6 +36,8 @@ const router = createBrowserRouter([
       {
         // This direct the pages to their various ID's page
         path: "cocktail/:id",
+        errorElement: <SingleErrorPage />,
+        loader: singleCocktailLoader,
         element: <Cocktail />,
       },
 

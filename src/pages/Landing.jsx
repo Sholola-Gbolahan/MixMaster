@@ -9,7 +9,6 @@ export const loader = async () => {
   
   const searchTerm = "";
   const resp = await axios.get(`${cocktailSearchUrl}${searchTerm}`);
-  console.log(resp);
 
   return { drinks: resp.data.drinks, searchTerm };
 };

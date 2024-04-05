@@ -5,7 +5,7 @@ const HomeLayout = () => {
 
   // useNavigation Give us info about the State of the fetched Data
   const navigation = useNavigation()
-  console.log(navigation)
+  // console.log(navigation)
 
   // This store the loading state from the useNavigation
   const isPageLoading = navigation.state === 'loading';
