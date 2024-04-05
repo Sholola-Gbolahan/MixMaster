@@ -32,7 +32,8 @@ const router = createBrowserRouter([
         element: <Newsletter />,
       },
       {
-        path: "cocktail",
+        // This direct the pages to their various ID's page
+        path: "cocktail/:id",
         element: <Cocktail />,
       },
 
