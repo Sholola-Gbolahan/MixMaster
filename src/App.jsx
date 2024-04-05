@@ -12,6 +12,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
+    errorElement: <Error/>,
     // Children is used to nest others pages to a parent page
     // All the children pages are gonna be relative to the Parent  pages
     children: [
