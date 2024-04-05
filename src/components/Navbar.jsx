@@ -1,17 +1,9 @@
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
-
-const StyledBtn = styled.button`
-  background: red;
-  padding: 1rem;
-  color: white;
-  font-size: 2rem; 
-`
+import Wrapper from "../assets/wrappers/Navbar";
 
 const Navbar = () => {
   return (
-    <nav>
-      <StyledBtn>Button Press</StyledBtn>
+    <Wrapper>
       <div className="nav-center">
         <span className="logo">MixMaster</span>
 
@@ -22,7 +14,7 @@ const Navbar = () => {
           <NavLink to="/newsletter">Newsletter</NavLink>
         </div>
       </div>
-    </nav>
+    </Wrapper>
   );
 };
 
