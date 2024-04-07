@@ -21,6 +21,20 @@ const Cocktail = () => {
 
   const singleDrink = data.drinks[0];
 
+
+console.log("SingleDrink", singleDrink)
+
+//  Functionality to get a particular strings name from an API list
+// This is saying if key start with 'stringredient' and if the 'stringredient' doesn't have the value of null
+// it's value should be store in the variable.
+// This also map through the generated result and store their value in the veriable
+
+  const validIngredient = Object.keys(singleDrink).filter((key) => key.startsWith('strIngredient') && singleDrink[key]!== null).map((key) => singleDrink[key] );
+
+  console.log(validIngredient)
+
+  
+
   const {
     strDrink: name,
     strDrinkThumb: image,
@@ -59,8 +73,19 @@ const Cocktail = () => {
         <p>
           {" "}
           <span className="drink-data"> Glass : </span> {glass}
-        </p><p>
-          {" "}
+        </p>
+
+        <p>
+          <span className="drink-data"> Ingredient : </span> 
+          { validIngredient.map((item,index) => {
+            return <span  key={item}> 
+            {/*  This adds a comma after the ingredient list */}
+            {item}{index < validIngredient.length - 1 ? ',' : ''} 
+            </span> 
+          })}
+        </p>
+
+        <p>
           <span className="drink-data"> Instructions : </span> {instructions}
         </p>
         

@@ -11,7 +11,9 @@ const CocktailCard = ({id, image, name, info, glass}) => {
   return (
     <Wrapper>
       <div className="img-container">
-        <img src={image} alt={name} />
+        <Link  to={`/cocktail/${id}`}> 
+         <img src={image} alt={name} />
+        </Link>
       </div>
 
       <div className="footer">

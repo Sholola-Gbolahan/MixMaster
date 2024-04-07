@@ -17,7 +17,7 @@ const Landing = () => {
 
   const {drinks, searchTerm} = useLoaderData ( );
 
-  console.log ( drinks, searchTerm );
+  // console.log ( drinks, searchTerm );
 
   return (
     <CocktailList  drinks={drinks} />
