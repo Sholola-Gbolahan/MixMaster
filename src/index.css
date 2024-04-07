@@ -252,6 +252,7 @@ ul {
 }
 
 .loading {
+  margin: 0 auto;
   width: 6rem;
   height: 6rem;
   border: 5px solid var(--grey-400);
