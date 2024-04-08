@@ -9,10 +9,11 @@ import {
   SingleErrorPage,
 } from "./pages";
 
-
 import { loader as landingLoader } from "./pages/Landing";
 // Importing Cocktial Loader into App
 import { loader as singleCocktailLoader } from "./pages/Cocktail";
+// importing newsletter action
+import { action as newsletterAction } from "./pages/Newsletter";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
       {
         path: "newsletter",
         element: <Newsletter />,
+        action: newsletterAction,
       },
       {
         // This direct the pages to their various ID's page
