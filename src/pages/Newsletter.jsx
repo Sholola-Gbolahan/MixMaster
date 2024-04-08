@@ -1,13 +1,19 @@
 import { Form } from "react-router-dom";
+import axios from "axios";
 
-// exporting action for  form submision also setup like loader
+// Posting URL
+const newsletterUrl = 'https://www.course-api.com/cocktails-newsletter';
+
+  // exporting action for  form submision also setup like loader
 export const action = async ({ request }) => {
   // getting FormdData value from the request
   const formData = await request.formData();
   // Getting form data from entries array and turning values into object
   const data = Object.fromEntries(formData);
 
-  console.log(data);
+  // Postig form data into the URL
+  const response = await axios.post(newsletterUrl, data);
+  console.log(response);
 
   return null;
 };
