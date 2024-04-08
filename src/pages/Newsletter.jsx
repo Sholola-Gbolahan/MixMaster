@@ -1,47 +1,72 @@
+import { Form } from "react-router-dom";
+
+// exporting action for  form submision also setup like loader
+export const action = async ({ request }) => {
+  // getting FormdData value from the request
+  const formData = await request.formData();
+  // Getting form data from entries array and turning values into object
+  const data = Object.fromEntries(formData);
+
+  console.log(data);
+
+  return null;
+};
 
 const Newsletter = () => {
   return (
-   <form  className="form">
-    <h4 style={{ textAlign: 'center', marginBottom:'2rem'}}>our newsletter</h4>
+    <Form className="form" method="post">
+      <h4 style={{ textAlign: "center", marginBottom: "2rem" }}>
+        our newsletter
+      </h4>
 
       {/* Name */}
 
       <div className="form-row">
-        <label htmlFor="name" className="form-label">name</label>
-        <input 
-        type='text'
-         className="form-input" 
-         name="name" 
-         id="name" 
-         defaultValue="John" />
+        <label htmlFor="name" className="form-label">
+          name
+        </label>
+        <input
+          type="text"
+          className="form-input"
+          name="name"
+          id="name"
+          defaultValue="John"
+        />
 
-         {/* Last Name */}
+        {/* Last Name */}
 
-        <label htmlFor="lastName" className="form-label">last name</label>
-        <input 
-        type='text'
-         className="form-input" 
-         name="lastName" 
-         id="lastName" 
-         defaultValue="John" />
+        <label htmlFor="lastName" className="form-label">
+          last name
+        </label>
+        <input
+          type="text"
+          className="form-input"
+          name="lastName"
+          id="lastName"
+          defaultValue="John"
+        />
 
+        {/* Email */}
+        <label htmlFor="email" className="form-label">
+          Email
+        </label>
+        <input
+          type="email"
+          className="form-input"
+          name="email"
+          id="email"
+          defaultValue="John@email.com"
+        />
 
-         {/* Email */}
-        <label htmlFor="email" className="form-label">Email</label>
-        <input 
-        type='email'
-         className="form-input" 
-         name="email" 
-         id="email" 
-         defaultValue="John@email.com" />
-
-         <button type ="button" className="btn btn-block" style={{marginTop:'0.5rem'}} >
-            submit
-         </button>
-  
+        <button
+          type="submit"
+          className="btn btn-block"
+          style={{ marginTop: "0.5rem" }}>
+          submit
+        </button>
       </div>
-   </form>
-  )
-}
+    </Form>
+  );
+};
 
-export default Newsletter
+export default Newsletter;
