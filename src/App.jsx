@@ -9,6 +9,7 @@ import {
   SingleErrorPage,
 } from "./pages";
 
+
 import { loader as landingLoader } from "./pages/Landing";
 // Importing Cocktial Loader into App
 import { loader as singleCocktailLoader } from "./pages/Cocktail";
