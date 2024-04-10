@@ -1,6 +1,6 @@
 import { Outlet, useNavigation } from "react-router-dom";
 import Navbar from "../components/Navbar";
-Navbar
+
 const HomeLayout = () => {
 
   // useNavigation Give us info about the State of the fetched Data
@@ -17,6 +17,8 @@ const HomeLayout = () => {
     <div>
       <Navbar />
       <section className="page">
+     
+
         {/* This display a Spinner if the is loading codition is true until it's idle */}
         {isPageLoading ? ( <div className="loading" />) 
         : 
