@@ -4,7 +4,7 @@
 
 ## Steps
 
-#### Install and Setup
+### Install and Setup
 
 - npm install
 - npm run dev
