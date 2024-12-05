@@ -1,22 +1,23 @@
-import { Form } from "react-router-dom";
-import axios from "axios";
+import { Form } from "react-router-dom"
+import axios from "axios"
 
 // Posting URL
-const newsletterUrl = 'https://www.course-api.com/cocktails-newsletter';
+const newsletterUrl = "https://www.course-api.com/cocktails-newsletter"
 
-  // exporting action for  form submision also setup like loader
+// exporting action for  form submision also setup like loader
 export const action = async ({ request }) => {
   // getting FormdData value from the request
-  const formData = await request.formData();
+  const formData = await request.formData()
   // Getting form data from entries array and turning values into object
-  const data = Object.fromEntries(formData);
+  const data = Object.fromEntries(formData)
 
-  // Postig form data into the URL
-  const response = await axios.post(newsletterUrl, data);
-  console.log(response);
+  // Posting form data into the URL
+  const response = await axios.post(newsletterUrl, data)
 
-  return null;
-};
+  console.log(response)
+
+  return null
+}
 
 const Newsletter = () => {
   return (
@@ -67,12 +68,13 @@ const Newsletter = () => {
         <button
           type="submit"
           className="btn btn-block"
-          style={{ marginTop: "0.5rem" }}>
+          style={{ marginTop: "0.5rem" }}
+        >
           submit
         </button>
       </div>
     </Form>
-  );
-};
+  )
+}
 
-export default Newsletter;
+export default Newsletter

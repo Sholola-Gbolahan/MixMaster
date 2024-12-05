@@ -1,6 +1,6 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import {
   About,
   Cocktail,
@@ -9,27 +9,13 @@ import {
   Landing,
   Newsletter,
   SingleErrorPage,
-} from "./pages";
+} from "./pages"
 
-import { loader as landingLoader } from "./pages/Landing";
+import { loader as landingLoader } from "./pages/Landing"
 // Importing Cocktial Loader into App
-import { loader as singleCocktailLoader } from "./pages/Cocktail";
+import { loader as singleCocktailLoader } from "./pages/Cocktail"
 // importing newsletter action
-import { action as newsletterAction } from "./pages/Newsletter";
-
-
-
-const queryClient = new QueryClient({
-  defaultOptions:{
-    queries:{
-      // This is setting how long the query is going to last for\
-      // This is 1secs X 60 = 1 min (1*5 = 5min)
-      // The valid time for query is set to 5 min
-      staleTime: 1000 * 60 *5,
-    }
-  }
-})
-
+import { action as newsletterAction } from "./pages/Newsletter"
 
 const router = createBrowserRouter([
   {
@@ -83,16 +69,26 @@ const router = createBrowserRouter([
     path: "/about",
     element: <About />,
   },
-]);
+])
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // This is setting how long the query is going to last for\
+      // This is 1secs X 60 = 1 min (1*5 = 5min)
+      // The valid time for query is set to 5 min
+      staleTime: 1000 * 60 * 5,
+    },
+  },
+})
 
 const App = () => {
   return (
-    
-      <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
-          <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
-  );
-};
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  )
+}
 
-export default App;
+export default App
