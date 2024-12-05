@@ -1,32 +1,32 @@
-import { useLoaderData, Link, Navigate } from "react-router-dom";
-import axios from "axios";
-import Wrapper from "../assets/wrappers/CocktailPage";
+import { useLoaderData, Link, Navigate } from "react-router-dom"
+import axios from "axios"
+import Wrapper from "../assets/wrappers/CocktailPage"
 
 const singleCocktailUrl =
-  "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
+  "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
 
 // Params give the ID result
 export const loader = async ({ params }) => {
   // grabing id value from params and storing it into a new object namd id
-  const { id } = params;
+  const { id } = params
   // decomposing data from the response
-  const { data } = await axios.get(`${singleCocktailUrl}${id}`);
+  const { data } = await axios.get(`${singleCocktailUrl}${id}`)
 
-  return { id, data };
-};
+  return { id, data }
+}
 
 const Cocktail = () => {
   //  This is used to render the values in the browser
-  const { id, data } = useLoaderData();
+  const { id, data } = useLoaderData()
 
   // This handle the errors of when Id is invalid by routing back to the landing Page
   if (!data) {
-    return <Navigate to="/" />;
+    return <Navigate to="/" />
   }
 
-  const singleDrink = data.drinks[0];
+  const singleDrink = data.drinks[0]
 
-  console.log("SingleDrink", singleDrink);
+  console.log("SingleDrink", singleDrink)
 
   //  Functionality to get a particular strings name from an API list
   // This is saying if key start with 'stringredient' and if the 'stringredient' doesn't have the value of null
@@ -37,9 +37,9 @@ const Cocktail = () => {
     .filter(
       (key) => key.startsWith("strIngredient") && singleDrink[key] !== null
     )
-    .map((key) => singleDrink[key]);
+    .map((key) => singleDrink[key])
 
-  console.log(validIngredient);
+  console.log(validIngredient)
 
   const {
     strDrink: name,
@@ -48,7 +48,7 @@ const Cocktail = () => {
     strCategory: category,
     strGlass: glass,
     strInstructions: instructions,
-  } = singleDrink;
+  } = singleDrink
 
   return (
     <Wrapper>
@@ -88,7 +88,7 @@ const Cocktail = () => {
                   {item}
                   {index < validIngredient.length - 1 ? "," : ""}
                 </span>
-              );
+              )
             })}
           </p>
 
@@ -98,7 +98,7 @@ const Cocktail = () => {
         </div>
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default Cocktail;
+export default Cocktail
